@@ -67,7 +67,7 @@ Now you can that all the design section on the one by one image
  
 <p align="center">
  <h1>totally responsive similar to facebook  </h1>
-   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/responsive.png" width="100%" height="400px" title="hover text">
+   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/responsive.png" width="100%" height="auto" title="hover text">
   
 </p>
  
