@@ -73,10 +73,13 @@ Now you can that all the design section on the one by one image
  
 
  
- @media (max-width:600px){
+<style>
 
-    img{
-
-        height:300px !important;
+    @media (max-width:600px){
+        
+        img{
+            
+            height:300px !important;
+        }
     }
- }
+    </style>
