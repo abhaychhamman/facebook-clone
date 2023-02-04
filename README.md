@@ -6,62 +6,62 @@ you can create post and do the comment on it , and very easily handle it and we 
 Now you can that all the design section on the one by one image 
 <p align="center">
  <h1>home page </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/post show card.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/post show card.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>create post card </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/createpost.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/createpost.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>post show on the homepage </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/post show card.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/post show card.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>Write the comment on it  </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/comments in post.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/comments in post.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>friends page  </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/friends page.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/friends page.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>slider of addfriends very similar to facebook slider  </h1>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/very powerfull slider .png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/very powerfull slider .png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>view more comments  </h1>
  <p>now we will show only top 10 comments when people click the view more comments btn the i'will show the again 10 comments</p>
-  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/view more comments.png" width="100%" height="400px" title="hover text">
+  <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/view more comments.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>photos section of profile page  </h1>
-   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/photos section.png" width="100%" height="400px" title="hover text">
+   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/photos section.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>login system  </h1>
-   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/login.png" width="100%" height="400px" title="hover text">
+   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/login.png" width="100%" height="auto" title="hover text">
   
 </p>
  
 <p align="center">
  <h1>signup system  </h1>
-   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/signup.png" width="100%" height="400px" title="hover text">
+   <img src="https://github.com/abhaychhamman/facebook-clone/blob/master/img%20web/signup.png" width="100%" height="auto" title="hover text">
   
 </p>
  
