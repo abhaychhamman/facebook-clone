@@ -1,0 +1,47 @@
+{% load static %}
+
+<style>
+    .posts_cont {
+       
+        /* display: none; */
+        flex-direction: column;
+    }
+
+  
+
+   
+
+    @media (max-width:700px) {
+        .posts_cont {
+
+            width: 99%;
+
+        }
+
+        .addFriendCont {
+ 
+ background: white;
+ padding: 5px 8px;
+
+ border-radius: 7px ;
+
+ }
+
+    }
+
+
+  
+</style>
+<div class="posts_cont">
+
+   <div class="userProfilecreatePost" >
+ 
+       {% include '../createpost_template.html' %}
+  
+   </div>
+    <div class="UserpostsContainer">    
+        {% include 'post_show_card.html' %}
+    </div>
+
+
+</div>

@@ -1,0 +1,130 @@
+{% load static %}
+
+<style>
+    .friends_cont {
+
+        margin: 20px auto;
+        /* width: 80%; */
+        display: none;
+        background-color: white;
+        border-radius: 7px;
+        box-shadow: 2px 2px 6px rgb(205, 205, 205);
+        flex-direction: column;
+
+
+    }
+
+    .friends_cont .topsec {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 10px;
+        padding: 33px;
+
+
+    }
+
+    .topsec .searchbar {
+        width: clamp(100px, 100%, 246px);
+        margin: 0px 20px;
+
+    }
+
+    .topsec input {
+
+        padding: 8px;
+        font-size: 12px;
+        outline: none;
+        border: none;
+        background-color: rgb(231, 242, 255);
+        border-radius: 50px;
+        width: inherit;
+        text-indent: 20px;
+
+    }
+
+    .friendsCardCont {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .friendsCard {
+        width: clamp(200px, 44%, 800px);
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        /* border: 2px solid black; */
+        box-shadow: 1px 1px 4px #d7d7d7;
+        border-radius: 11px;
+        margin: 5px 5px;
+    }
+
+    .friends_cont .moreicon{
+        font-size: 19px;
+    }
+    .friends_cont .moreicon:hover{
+        color: gray;
+        cursor: pointer;
+    }
+    .friends_cont .profilelogo{
+        width: 80px;
+    height: 80px;
+    object-fit: cover;
+    box-shadow: 1px 1px 6px grey;
+    border-radius: 10px;
+    }
+
+   
+   
+    @media (max-width:800px) {
+
+
+        
+        .friends_cont .profilelogo{
+        width: 50px;
+         height: 50px;
+    
+    }
+
+    }
+   
+    @media (max-width:650px) {
+
+
+        
+        .friendsCard {
+            width: 90%;
+
+
+        }
+    }
+</style>
+<div class="friends_cont">
+
+    
+    <div class="topsec">
+        
+        <h5 class="heading">Friends</h5>
+        <div class="searchbar"><input type="search" name="searchfriends" id="searchfriends" placeholder="Search...">
+        </div>
+    </div>
+    <div class="friendsCardCont">
+        {% for i in range.split %}
+        <div class="friendsCard">
+            <div class="userinfo fccr" style=" justify-content: flex-start; width: 100%;">
+                <img src="{%static 'abhaypic.jpg' %}" alt="" class="profilelogo">
+                <div class="mx-4" style="text-align: start;">
+                    <div class="username" style="text-transform: capitalize;"><strong> {{request.user}}</strong></div>
+                    <div class="datepost" style="color: gray; font-size: 10px;">10 mutual friends</div>
+                </div>
+            </div>
+            <div class="moreicon"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+        </div>
+        {% endfor %}
+      
+    </div> 
+</div>

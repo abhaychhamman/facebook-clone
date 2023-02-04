@@ -1,0 +1,398 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% load static %}
+<style>
+    .homepage {
+
+        display: flex;
+        justify-content: center;
+        padding: 20px 0px;
+        width: 100%;
+
+    }
+
+    .homepage .left {
+
+        width: clamp(200px, 23%, 350px);
+        display: flex;
+        justify-content: start;
+        overflow-x: hidden;
+        height: calc(98vh - 50px);
+        position: fixed;
+        left: 0%;
+        top: 60px;
+        flex-direction: column;
+
+    }
+
+    .homepage .middle {
+        width: clamp(500px, 41%, 600px);
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid black; */
+        height: fit-content
+    }
+
+    .homepage .right {
+
+        width: clamp(280px, 21%, 400px);
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: calc(98vh - 50px);
+        align-items: flex-start;
+        /* border: 1px solid black; */
+        margin: 5px 10px;
+        padding: 5px;
+        overflow-x: hidden;
+        position: fixed;
+        right: 0%;
+        top: 60px;
+    }
+
+    .homepage .item {
+
+        padding: 7px 15px;
+        font-family: serif;
+        border-radius: 10px;
+    }
+
+    .homepage .item:hover {
+
+        background-color: #e2e2e2;
+
+    }
+
+    .homepage .item .titleleft {
+        width: 84%;
+        cursor: pointer;
+        /* background: blue; */
+        padding-top: 12px;
+    }
+
+   
+    .homepage .sponsered,
+    .homepage .friendRequest {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 1px solid gray;
+        padding: 20px 0px;
+
+    }
+
+    .homepage .right h4 {
+        font-family: sans-serif;
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+
+
+    .sec1 .addStories {
+
+        position: relative;
+    top: -54px;
+    background: dodgerblue;
+    left: calc(50% - 7px);
+    width: 8px;
+    height: 9px;
+    transform: scale(4.5);
+
+
+    }
+
+    .middle .rightcontent {
+
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+
+        margin-bottom: 20px;
+    }
+
+    .itemcontent,
+    .itemcontent .iconhomepage {
+        display: flex;
+        font-size: 12px;
+        height: 30px;
+        margin: 3px;
+    }
+
+    .itemcontent p {
+        margin-top: 5px;
+
+    }
+
+    .homepage .linkssec1 {
+
+        font-size: 14px;
+        font-family: sans-serif;
+        border-bottom: 1px solid rgb(217, 217, 217);
+        margin-bottom: 20px;
+
+    }
+
+    .homepage .linksec1 {
+
+
+        padding: 12px 0px;
+        font-size: 16px;
+        font-weight: 300;
+        text-transform: capitalize;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .homepage .linksec1:hover {
+
+        background-color: rgb(238, 238, 238);
+        border-radius: 7px;
+
+        cursor: pointer;
+
+    }
+
+    #stories {
+        border-bottom: 3px solid dodgerblue;
+
+    }
+
+    #reels_block,
+    #rooms_block {
+        display: none;
+
+
+
+    }
+
+    #stories_block {
+        display: flex;
+        align-items: flex-end;
+
+
+
+    }
+
+    .linkpost {
+
+        cursor: pointer;
+    }
+
+   
+
+
+    @media(max-width:1070px) {
+
+
+        .homepage .left {
+
+            display: none;
+
+        }
+
+        .homepage .middle {
+
+            width: clamp(520px, 66%, 646px);
+            padding: 0px 10px;
+        }
+
+        .homepage {
+            justify-content: flex-start;
+        }
+
+        .homepage .right {
+
+            width: clamp(180px, 30%, 350px);
+
+
+        }
+    }
+
+
+    @media(max-width:820px) {
+
+
+
+
+        .homepage .right {
+            display: none;
+
+
+        }
+
+        .homepage .middle {
+
+
+            width: 80%;
+            justify-content: center;
+        }
+
+        .homepage {
+            justify-content: center;
+        }
+
+        .homepage .linksec1 {
+
+            font-size: 12px;
+
+        }
+
+       
+
+        .sec1 .rightcontent .itemcontent {
+            font-size: 11px !important;
+        }
+
+    }
+
+    @media(max-width:600px) {
+
+
+ 
+
+        .homepage .middle {
+
+
+            width: 100%;
+            justify-content: center;
+        }
+
+
+    }
+
+    @media(max-width:340px) {
+
+
+
+        .sec2 .profilelogo {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+
+     
+
+        .homepage .iconhomepage {
+            font-size: 13px !important;
+        }
+
+
+    }
+</style>
+
+
+
+<div class="homepage">
+    
+   
+    
+    <div class="left">
+
+        {% include 'vartical_nav_homepage.html' %}
+
+
+    </div>
+    <div class="middle" style=" display: flex; justify-content: flex-start; flex-direction: column;">
+
+
+        <div class="sec1    shadow bg-white rounded" style="width: 100%; height: 280px">
+            <div class="fasr bd-highlight  linkssec1 " style="width: 100%; height: fit-content; color: gray;">
+
+                <div class="stories linksec1" id="stories">stories</div>
+                <div class="reels linksec1" id="reels">reels</div>
+                <div class="rooms linksec1" id="rooms">rooms</div>
+
+            </div>
+            <div id="stories_block" style="width: 100%; ">
+
+                <div class="card text-center mx-2" style="width: fit-content; height: fit-content;">
+                    <img class="img-thumbnail" src="{%static 'adv1.jpg' %}" style="width: 130px;" alt="">
+                    <h4 class="card-title mt-4 " style="font-size: 12px;">create stories</h4>
+                    <div class="iconhomepage   addStories">
+                        <i class="fa fa-plus"  aria-hidden="true" style="color: white; font-size: 5px; font-weight: 100;"></i></div>
+                           
+                         
+                </div>
+
+                <div class="rightcontent">
+                    <div class="item1 itemcontent " style="width: 100%;">
+                        <div class="iconhomepage "><i class="fas fa-image  " style="color: black;"
+                                style="color:dodgerblue;"></i></div>
+                        <p class="">Share everyday moments with friends and family.</p>
+                    </div>
+                    <div class="item2 itemcontent " style="width: 100%;">
+                        <div class="iconhomepage "><i class="fas fa-broom   " style="color: black;"
+                                style="color:dodgerblue;"></i></div>
+                        <p class="">Control who can join you in your room and when.</p>
+                    </div>
+                    <div class="item2 itemcontent " style="width: 100%;">
+                        <div class="iconhomepage "><i class="fa-brands fa-facebook-messenger  " style="color: black;"
+                                style="color:dodgerblue;"></i></div>
+                        <p class="">Have live audio conversations or video chat with friends.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="reels_block"> reels block
+            </div>
+            <div id="rooms_block">rooms block</div>
+        </div>
+
+        <div class="sec2 ">
+
+          
+            {% include 'createpost_template.html' %}
+
+        </div>
+        <div class="sec3">
+            {% include 'post_show_card.html' %}
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="sponsered">
+            <h4>Sponsored</h4>
+            {% include 'advertisement_card.html' %}
+        </div>
+        <div class="friendRequest">
+            <div style="display: flex; justify-content: space-between;">
+                <h4 style="color: gray;">Friends Request</h4>
+                <li><a href="/" style="color:dodgerblue; ">See All</a></li>
+
+            </div>
+            {% include 'friends_request.html' %}
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+// left vertical navbar in homepage when mouse over then visible scroll 
+    document.addEventListener('mouseover', (event) => {
+        a = event.target.className
+        if (a == "item" || a == "iconhomepage" || a == "titleleft") {
+            document.getElementsByClassName('left')[0].className += " hidescroll"
+        }
+        else {
+            document.getElementsByClassName('left')[0].className = "left"
+        }
+
+    })
+
+
+
+
+
+</script>
+
+{% endblock content %}

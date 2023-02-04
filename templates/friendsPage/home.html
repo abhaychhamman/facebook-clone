@@ -1,0 +1,35 @@
+{% load static %}
+
+<style>
+    .friends_request_content,.add_friend_content {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+
+
+    }
+</style>
+<div class="home_content">
+
+    <div class="friendRequestSection fbcr mx-4">
+        <h4 class="heading">Friends request</h4>
+        <div><a href="">see all</a></div>
+    </div>
+    <div class="friends_request_content">
+        {% include 'friend_requestVertical.html' %} 
+    </div>
+
+    <div class="addFriendSection fbcr mx-4">
+        <h4 class="heading">Friends Suggestion</h4>
+        <div><a href="">see all</a></div>
+    </div>
+    <div class="add_friend_content">
+     
+        {% include 'addFriendsCardVertical.html' %}
+    </div>
+</div>

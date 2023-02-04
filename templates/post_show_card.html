@@ -1,0 +1,168 @@
+{% load static %}
+
+
+
+
+
+<style>
+    .showPostContainer {
+
+        flex-direction: column;
+
+        width: 100%;
+        background-color: white;
+        padding: 0px 15px 11px 15px;
+        font-size: 13px;
+        border-radius: 12px;
+        margin: 10px 0px;
+        box-shadow: 1px 1px 6px rgb(207, 207, 207);
+    }
+
+    .postimage {
+
+        height: 600px;
+        width: 100%;
+        height: auto;
+        padding: 4px 0px;
+        object-fit: cover;
+        border-bottom: 1px solid rgb(197, 197, 197);
+    }
+
+
+    .desription_post {
+        padding: 0px 0px 0px 15px;
+        width: 100%;
+
+        border-left: 3px solid #d3d3d3;
+        text-align: start;
+        border-radius: 5px;
+
+    }
+
+    .showPostContainer .cancel {
+
+
+        font-size: 24px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .showPostContainer .cancel:hover {
+
+        color: red;
+        transform: scale(0.9);
+    }
+
+    .infopost,
+    .doinpost {
+        width: 100%;
+        font-size: 12px;
+        border-bottom: 1px solid rgb(197, 197, 197);
+
+        padding: 5px 2px;
+    }
+
+    .doinpost div {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+
+    @media (max-width:500px) {
+
+        .doinpost,
+        .infopost,
+        .desription_post {
+            font-size: 10px !important;
+        }
+
+
+    }
+</style>
+
+
+
+
+{% load action_tg %}
+
+
+
+
+
+{% for post in posts %}
+
+{% abhay forloop.counter as showaddFriendCard%}
+
+{% if showaddFriendCard == 1 %}
+
+<div class="addFriendCont">
+    <h6 class="heading" style="text-align: start;">Peoples you may know</h6>
+    
+    <div class="addFriendCardCont">
+        {% include 'addFriendsCard.html' %}
+        {% comment %} {% include 'addFriendsCardVertical.html' %} {% endcomment %}
+        {% comment %} {% include 'friend_requestVertical.html' %} {% endcomment %}
+
+    </div>
+
+
+</div>
+{% endif %}
+
+
+
+<div class="showPostContainer fccr">
+
+    <div class="fbcr" style="width: 100%;">
+
+        <div class="userinfo fccr" style="padding: 20px 0px; justify-content: flex-start; width: 100%;">
+            <img src="{%static 'facebook-logo.png' %}" alt="" class="profilelogo" style="width: 30px; height: 30px;">
+            <div class="mx-4">
+                <div class="username" style="text-transform: capitalize;"><strong>{{post.user.first_name}}
+                        {{post.user.last_name}}</strong></div>
+                <div class="datepost" style="color: gray; font-size: 10px;">{{post.created_at}}</div>
+
+            </div>
+        </div>
+        <p class="cancel mx-4">x</p>
+    </div>
+    <p class="desription_post">{{post.description.strip}}</p>
+
+    <img src="/{{post.img_vid}}" class="postimage" alt="">
+
+    <div class="infopost fbcr">
+        <div class="likes">{{post.likes}} likes</div>
+
+        <div class="fbcr">
+            <div class="commentCounter mx-1" id="commentCounter{{post.id}}">{{post.commentCounter}} comment</div>
+            <div class="share mx-1">{{post.share}} share</div>
+        </div>
+    </div>
+    <div class="doinpost fbcr" style="font-size: medium; padding: 5px 30px;">
+        <div class="dolikes hov"><i class="fa fa-thumbs-up" aria-hidden="true"></i> likes</div>
+        <div class="docomment hov" id="commentsid{{post.id}}"><i class="fa fa-comment" aria-hidden="true"></i> comment
+        </div>
+        <div class="doshare hov"><i class="fa fa-share" aria-hidden="true"></i> share</div>
+    </div>
+
+    <!-- contain Comments  -->
+
+    {% include 'comments_page.html' %}
+
+
+
+</div>
+
+{% endfor %}
+
+
+
+<!-- for prevent autoreloader page  -->
+
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>

@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+
+
+    <style>
+
+*{
+    margin: 0;
+    font-size: 24px;
+    padding: 0;
+    font-family: sans-serif;
+ 
+}
+input{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+
+body{
+    background-color: rgb(242, 242, 242);
+}
+
+.loginpageContainer
+{
+ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: clamp(400px,70%,800px);
+    margin: auto;
+   
+
+}
+.loginpageleft{
+    
+    width: clamp(300px,50%,400px);
+    margin: 100px 20px;
+}
+.loginpageleft .logo{
+    color: dodgerblue;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 20px 5px;
+}
+
+        .loginpagelRight{
+
+            width: clamp(350px,50%,400px);
+            height: auto;
+            border-radius: 5px;
+            background-color: white;
+        display: flex;
+        box-shadow: 1px 0px 5px rgb(157 157 157);
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 8px 5px;
+        margin: 100px 20px;
+     
+        }
+        .loginpagelRight input{
+
+            
+            font-size: 16px;
+            padding: 15px 5px ;
+            border-radius: 5px;
+            border:1px solid gray;
+            background-color: none;
+            outline: none;
+            margin: 5px ;
+            color: black;
+        }
+        .loginpagelRight input:focus{
+
+          border: 1px solid dodgerblue;
+            
+            
+        }
+
+        .loginsubmit{
+
+            font-weight: 700;
+            font-size: 18px;
+            background-color: dodgerblue;
+            cursor: pointer;
+            color: white !important;
+            transition: 0.5s;
+        }
+        .btnhover:hover{
+
+         
+            background-color: blue;
+            transform: scale(0.95);
+         
+            transition: 0.5s;
+           
+        }
+        .loginforgotbtn{
+
+            font-size: 16px; 
+            
+        }
+
+
+        .loginpagelRight li{
+            list-style: none;
+            text-align: center;
+            margin: 8px;
+        }
+        .loginpagelRight a{
+           text-decoration: none;
+        }
+
+        .createaccount{
+            
+            background-color: #42b72a;
+        
+            width: fit-content;
+            margin:18px auto;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            transition: 0.5s;
+            outline: none;
+
+        }
+        .loginpagelRight button a{
+            
+                color: white;
+                font-size: 18px;
+          
+        }
+
+        hr{
+            
+    color: white;
+  
+    background: #c8c8c8;
+    height: 1px;
+    border: none;
+}
+ 
+
+@media (max-width:800px) {
+        
+    .loginpageContainer
+{
+ 
+   
+    width:100%;
+    justify-content: space-between;
+ 
+    
+}
+
+
+
+}
+
+    @media (max-width:700px) {
+        
+
+        
+    .loginpageContainer
+    {
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    }
+    
+.loginpageleft{
+     
+    margin: 20px 20px;
+}
+ 
+
+        .loginpagelRight{
+
+       
+        margin: 20px 20px;
+     
+        }
+
+    *{
+
+        font-size: 20px;
+    }
+    }
+      
+
+
+    </style>
+</head>
+<body>
+
+    <div class="loginpageContainer">
+
+            <div class="loginpageleft">
+                <h1 class="logo">
+                    Facebook
+                </h1>
+                <p>
+                    Facebook helps you connect and share with the people in your life.
+                </p>
+
+            </div>
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="loginpagelRight">
+                    
+                    <input type="email" placeholder="Email address or phone number" class="dis" name="email">
+                    <input type="password" placeholder="password" class="dis" name="password">
+                    <input type="submit" name="submit" value="Log in" class="loginsubmit dis btnhover" >
+                    <li>
+                        <a href="#" class="loginforgotbtn">Forgotten password?</a>
+                        
+                    </li>
+                    <hr>
+                    <button class="createaccount btnhover"><a href="#" >Create new account</a></button>
+                    
+                </div>
+                
+            </div>
+        </form>
+            
+    {% include 'signup.html' %}
+
+   
+</body>
+
+<script>
+
+let createaccount=document.getElementsByClassName('createaccount')[0]
+let SignupPage=document.getElementsByClassName('SignupPage')[0]
+let loginpageContainer=document.getElementsByClassName('loginpageContainer')[0]
+let cancel=document.getElementsByClassName('cancel')[0]
+let dis=document.getElementsByClassName('dis')
+console.log(createaccount)
+
+createaccount.addEventListener('click',()=>{
+ 
+    SignupPage.style.display="block";
+    loginpageContainer.style.opacity="0.3";
+    
+    
+    
+})
+cancel.addEventListener('click',()=>{
+     
+    createaccount.style.display="block";
+    SignupPage.style.display="none";
+    loginpageContainer.style.opacity="1";
+    
+
+})
+
+
+
+
+
+</script>
+
+</html>

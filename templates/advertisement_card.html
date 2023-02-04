@@ -1,0 +1,66 @@
+{% load static %}
+<style>
+    .advCard{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer; 
+    }
+    .advCard:hover{
+     background-color: #e2e2e2;
+    }
+.advCard .titleadv{
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: system-ui;
+}
+
+.advCard img{
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+}
+
+.advCard .info{
+    width: calc(95% - 50px);
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+.advCard a{
+   color: gray;
+}
+
+
+
+</style>
+
+<div class="advCard">
+
+    <img src="{% static 'adv1.jpg' %}" alt="">
+    <div class="info">
+
+        <div class="titleadv">Lorem ipsum dolor sit, amet coetur g elit. tem, iis.</div>
+        <li><a href="https://facebook.com">phonepeaice.com</a></li>
+    </div>
+
+
+</div>
+
+<div class="advCard">
+
+    <img src="{% static 'adv2.jpg' %}" alt="">
+    <div class="info">
+
+        <div class="titleadv">Lorem ipsum dolor sit, amet coetur g elit. tem, iis.</div>
+        <li><a href="https://facebook.com">phonepeaice.com</a></li>
+    </div>
+
+
+</div>
+

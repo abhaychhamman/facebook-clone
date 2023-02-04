@@ -1,0 +1,132 @@
+{% load static %}
+<style>
+    .profile_dialog {
+        display: flex;
+        display: none;
+        justify-content: space-between;
+        background-color: white;
+        flex-direction: column;
+        padding: 10px ;
+        border-radius: 12px;
+        margin: 10px;
+        z-index: 3;
+        box-shadow: 1px 1px 4px gray;
+        position: fixed;
+        width: fit-content;
+        top: 50px;
+        right: 0px;
+        transition: 3s;
+    }
+
+    .profile_dialog .item {
+        padding: 3px 20px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        margin: 5px 0px;
+
+    }
+    
+ 
+.profile_dialog .item:hover {
+    padding: 3px 20px;
+   
+    background: #f1f1f1;
+ cursor: pointer;
+    border-radius: 7px;
+
+}
+
+    .profile_dialog .seeProfile {
+
+        width: 100%;
+        padding: 5px  !important;
+        box-shadow: 1px 1px 4px gray;
+        border-radius: 7px;
+        margin-bottom: 10px;
+
+    }
+
+    .profile_dialog .userinfo {
+
+        padding: 5px !important;
+
+        border-bottom: 1px solid rgb(215, 215, 215);
+
+    }
+
+
+    .linkOfDialog .item .text {
+
+        margin: 0px 10px;
+        text-align: start;
+        color: black;
+
+    }
+    .linkOfDialog .item .text a{
+
+      
+        color: black;
+
+    }
+
+    .linkOfDialog .item .iconDialog {
+
+        font-size: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d2d2d2;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+     
+
+    }
+</style>
+
+<div class="profile_dialog" id="profile_dialog">
+    <a href="/profile/" style="color: black; "> 
+    <div class="seeProfile">
+        <div class="userinfo fccr" style="padding: 20px 0px; justify-content: flex-start; width: 100%;">
+            <img src="{%static 'facebook-logo.png' %}" alt="" class="profilelogo" style="width: 30px; height: 30px;">
+            <div class="username" style="text-transform: capitalize; padding: 0px 10px; width: 180px;"><strong>abahy </strong></div>
+        </div>
+         <div class="" style="width: 100%; color: dodgerblue;">
+             see profile
+         </div>
+        
+    </div>
+</a>
+    <div class="linkOfDialog">
+        <div class="item ">
+            <div class="iconDialog"><i class="fas fa-ring    "></i></div>
+            <div class="text">Settings & privacy</div>
+        </div>
+
+        <div class="item ">
+            <div class="iconDialog"><i class="fa fa-question" aria-hidden="true"></i></div>
+            <div class="text">Help & support</div>
+        </div>
+        <div class="item ">
+            <div class="iconDialog"><i class="fa fa-moon-o" aria-hidden="true"></i></div>
+            <div class="text">Display & accessibility</div>
+        </div>
+        <div class="item ">
+            <div class="iconDialog"><i class="fa fa-feed" aria-hidden="true"></i></div>
+            <div class="text">Give feedback</div>
+        </div>
+        <div class="item ">
+            <div class="iconDialog"> <i class="fas fa-door-open   "></i></div>
+            <div class="text"><a href="/logout/">Log Out</a> </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
+</div>

@@ -1,0 +1,234 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% load static %}
+
+<style>
+    .friendspage .verticalNavbar {
+
+        width: clamp(200px, 23%, 350px);
+        display: flex;
+        justify-content: start;
+        overflow-x: hidden;
+        height: calc(98vh - 50px);
+        position: fixed;
+        left: 0%;
+        top: 60px;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 1px 1px 3px rgb(219, 219, 219);
+
+    }
+
+    .verticalNavbar .item:hover {
+
+        background-color: #e2e2e2;
+
+    }
+
+
+
+    .verticalNavbar .item {
+
+        padding: 7px 15px;
+        font-family: serif;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+    }
+
+
+    .verticalNavbar .item i {
+
+        background-color: rgb(203, 203, 203);
+        border-radius: 50%;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        color: black;
+        font-size: 19px;
+    }
+
+
+    .verticalNavbar .item .titleleft {
+        width: 84%;
+        cursor: pointer;
+        /* background: blue; */
+        padding-top: 12px;
+        font-weight: 600;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-left: 10px;
+    }
+
+    .ham {
+        display: none;
+    }
+
+    @media (max-width:700px) {
+
+        .friendspage .verticalNavbar {
+
+            display: none;
+
+        }
+
+        .ham {
+
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            top: 65px;
+            left: 13px;
+            font-size: 25px;
+            color: dodgerblue;
+            background: #d5d5d5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            border-radius: 50%;
+        }
+
+        .ham:hover {
+
+            transition: 0.5s;
+            transform: scale(0.95);
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+
+    @media (min-width:700px) {
+
+        .friendspage .verticalNavbar {
+
+            display: flex !important;
+
+        }
+    }
+</style>
+
+<div class="friendspage">
+
+
+    <div class="hamburg ham">
+        <i class=" hamburg fa fa-list" aria-hidden="true"></i>
+    </div> 
+
+    <div class="verticalNavbar">
+        <div class="topleftNav fbcr" style="width: 100%; padding: 10px 10px ;">
+            <h4 class="heading">Friends</h4>
+            <div class="iconhomepage"><i class="fa fa-gg-circle" aria-hidden="true"></i></div>
+        </div>
+        <div class="item  ">
+            <div class="iconhomepage"><i class="fa fa-home" style="color:dodgerblue;"></i></div>
+            <div class="titleleft">Home</div>
+        </div>
+        <div class="item  ">
+            <div class="iconhomepage"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+            <div class="titleleft">Friend requests</div>
+        </div>
+        <div class="item  ">
+            <div class="iconhomepage"><i class="fa fa-user-md" aria-hidden="true"></i></div>
+            <div class="titleleft">Suggestions</div>
+        </div>
+        <div class="item  ">
+            <div class="iconhomepage"><i class="fas fa-user-friends    "></i></div>
+            <div class="titleleft">all Friends</div>
+        </div>
+    </div>
+
+<style>
+
+.rightSection{
+
+    width: calc(100% - 360px );
+    /* background-color: gray; */
+    margin: 10px 4px 10px auto ;
+}
+
+@media (max-width:1100px){
+
+    .rightSection{
+
+width: calc(100% - 270px );  
+}
+
+}
+@media (max-width:1050px){
+
+    .rightSection{
+
+width: calc(100% - 200px );  
+}
+
+}
+@media (max-width:700px){
+
+    .rightSection{
+
+width:90%;  
+}
+
+}
+
+
+</style>
+
+    <div class="rightSection">
+
+        {% include 'friendsPage/home.html' %}
+        {% include 'friendsPage/suggestions.html' %}
+       
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+<script>
+
+    $('html').click((e)=>{
+
+        console.log(window)
+
+        if(window.innerWidth<700){
+
+            
+            w=$(".verticalNavbar").innerWidth()
+            h=$(".verticalNavbar").innerHeight()
+            console.log(e.offsetX,h)
+            console.log(e.offsetY,w)
+            console.log(e)
+            
+            if(e.target.classList[0]=="hamburg"){
+                
+                $('.verticalNavbar').show()
+                
+            }
+            else if(w<e.clientX ){
+                
+                $('.verticalNavbar').hide()
+            }
+            
+        }
+
+        
+        
+    })
+    
+
+</script>
+
+
+{% endblock content%}

@@ -1,0 +1,233 @@
+<style>
+
+    
+.SignupPage{
+
+    padding: 14px;
+    border-radius: 5px;
+    position: absolute;
+      left:calc(40% - 200px);
+    top:calc(40% - 200px);
+    
+    /* width: clamp(300px,75%,700px); */
+    box-shadow: 1px 0px 5px rgb(157 157 157);
+    background-color: white;
+    margin: auto;
+    display: none;
+}
+.SignupPage h1{
+
+    font-size: 30px;
+    margin-bottom:5px;
+    
+}
+.SignupPage p{
+
+    font-size: 13px;
+
+}
+
+.SignupPage hr{
+    margin: 8px 0px ;
+}
+.SignupPage .name{
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+}
+.SignupPage  input{
+    
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f5f6f7;
+    border: 1px solid rgb(213, 213, 213);
+    outline: none;
+    font-size: 17px;
+    padding: 8px 0px;
+    text-indent: 4px ;
+
+    margin: 10px 0px;
+}
+.SignupPage .name input{
+    
+    width: 48%;
+    
+    
+}
+.SignupPage .form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+}
+.SignupPage .loginsubmit{
+    
+
+    background-color: dodgerblue;
+    width: 70%;
+    margin: 20px auto 0px auto;
+    
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.date label {
+  font-size: 14px;
+}
+
+#date{
+
+    margin:5px  auto;
+}
+
+.gender{
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 5px;
+
+}
+
+.gendercatag{
+
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    display: flex;
+    padding: 4px;
+    font-size: 16px;
+    width: fit-content;
+}
+.SignupPage label{
+
+ 
+    font-size: 16px;
+   padding:5px;
+  
+}
+.gen{
+    width: 100%;
+
+}
+
+.cancel{
+
+    font-size: 14px;
+    font-weight: 700; 
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    color: white;
+    background: black;
+    padding: 2px;
+}
+.cancel:hover{
+
+    color: red;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+.policy{
+    width:400px;
+    font-size: 12px !important;
+    margin-top: 10px;
+}
+
+
+
+@media (max-width:600px) {
+        
+    .SignupPage{
+
+padding: 14px;
+border-radius: 5px;
+position: absolute;
+top:100px;
+left: 30px;
+width: 400px;
+ 
+}
+
+}
+
+</style>
+
+<form action="" method="post">
+    {% csrf_token %}
+<div class="SignupPage">
+
+    <div style="display: flex; justify-content: space-between; margin-right: 20px;">
+        <div>
+            <h1 class="title">Signup</h1>
+            <p>It's quick and easy.</p>
+            
+        </div>
+        <div class="cancel" >X</div>
+    </div>
+   <hr>
+   <div class="form">
+
+        <div class="name">
+            <input type="text" placeholder="First name" name="fname">
+            <input type="text" placeholder="Surname" name="sname">
+        </div>
+        <input type="email" placeholder="email address"  name="email">
+        <input type="password" placeholder="New password" name="password">
+        <div class="date">
+            <label for="date">Date of birth</label>
+            <input type="date" id="date" name="dob">
+        </div>
+
+        
+        <div class="gen">
+
+            <label>Gender </label>
+            
+            <div class="gender">
+                <div class="gendercatag">
+                    <label for="female">female</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                </div>
+                <div class="gendercatag">
+                    <label for="male">male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                </div>
+                
+                <div class="gendercatag">
+                    <label for="custom">custom</label>
+                    <input type="radio" id="custom" name="gender" value="custom">
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+        
+        
+        <p class="policy">
+            People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more.</a> 
+              
+        </p>
+        <p class="policy">
+           
+            By clicking Sign Up, you agree to our<a href="#">Terms</a>, <a href="#"> Privacy Policy </a>  ,and <a href="#">Cookies Policy.</a>  
+            You may receive SMS notifications from us and can opt out at any time.
+            
+            
+        </p>
+        <input type="submit" name="submit" value="Sign Up" class="loginsubmit">
+        
+</div>
+
+</div>
+
+</form>

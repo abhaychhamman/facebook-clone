@@ -1,0 +1,77 @@
+{% load static %}
+<style>
+.commentInput{
+    border-radius: 13px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #f2f2f2;
+    box-shadow: 1px 1px 5px grey;
+    font-size: 13px;
+    padding: 4px;
+    text-indent: 12px;
+}
+.secTopComment{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.commentsContainer{
+    width: 100%;
+    text-align: start;
+    display: none;
+}
+
+.viewMoreCommentsBtn {
+    font-size: 12px;
+    color: rgb(125, 123, 123);
+
+}
+.viewMoreCommentsBtn:hover{
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+ 
+
+
+</style>
+<div class="commentsContainer" id="commentsContainer{{post.id}}">
+
+    <div class="secTopComment">
+
+        <div class="userinfo fccr" style="padding: 20px 0px; justify-content: flex-start;">
+            <img src="{%static 'facebook-logo.png' %}" alt="" class="profilelogo" style="width: 30px; height: 30px;">
+           
+        </div>
+     
+            <input type="text" class="commentInput mx-2" placeholder="Write Comment here...." >                
+       
+         <a class="btn btn-primary btn-sm p-0 px-1"  id="postCmnt{{post.id}}">Post</a>
+         
+
+
+    </div>
+
+      
+    <div class="commentsHaveDone" id="commentsHaveDone{{post.id}}">
+        
+
+    </div>
+    
+    <a class="viewMoreCommentsBtn" id="viewMoreCommentsBtn{{post.id}}"  name="20" >View More Comments..</a> 
+
+
+</div>
+
+<script>
+
+
+    
+
+
+ 
+
+</script>

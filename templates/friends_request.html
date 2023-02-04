@@ -1,0 +1,153 @@
+{% load static %}
+<style>
+    .frReqCard{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: system-ui;
+        cursor: pointer; 
+    }
+    .frReqCard:hover{
+     background-color: #e2e2e2;
+    }
+.frReqCard .name{
+  
+    font-size: 16px;
+    font-weight: 500;
+    font-family: system-ui;
+}
+.frReqCard .daysBefore{
+    
+    font-size: 16px;
+    color: gray;
+    font-weight: 200;
+     
+ 
+}
+
+.frReqCard img{
+    width: 62px;
+    padding: 3px;
+    height: 62px;
+    background: white;
+    border-radius: 50%;
+    position: inherit;
+}
+.frReqCard img:nth-child(2){
+    position: relative;
+    left: -14px;
+}
+
+.frReqCard .info{
+    width: calc(95% - 50px);
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+.frReqCard a{
+   color: gray;
+}
+
+.mutualfriends{
+
+    
+    display: flex;
+    margin: 5px;
+    color: gray;
+    font-size: 11px;
+    align-items: center;
+
+}
+.mutualfriends img{
+
+    
+    width: 25px;
+    padding: 3px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    position: inherit;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.btn{
+    color: black;
+    background: #cdcccc;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin: 0px 5px;
+
+}
+.buttons .confirm{
+    background-color: #1b74e4;
+    color: white;
+}
+
+@media(max-width:1000px){
+
+    .frReqCard img{
+    width: 50px;
+    padding: 3px;
+    height: 50px;
+ 
+}
+
+.mutualfriends img{
+
+    
+width: 23px;
+padding: 3px;
+height: 23px;
+ 
+}
+
+.frReqCard .name,.frReqCard .daysBefore{
+  
+  font-size: 14px;
+  font-weight: 500; 
+}
+
+.btn{
+ 
+    padding: 8px 8px;
+
+}
+}
+ 
+
+</style>
+
+<div class="frReqCard">
+
+    <img src="{% static 'facebook-logo.png' %}" alt="">
+    <div class="info">
+        <div style="display: flex; justify-content: space-between;">
+
+            <div class="name">Abhay Kumar Singh </div>
+            <div class="daysBefore">4d</div>
+        </div>
+        <div class="mutualfriends">
+            <div class="img">
+                <img src="{% static 'facebook-logo.png' %}" alt="">
+                <img src="{% static 'facebook-logo.png' %}" alt="">
+            </div>
+            <p>8 mutual friends</p>
+        </div>
+
+        <div class="buttons">
+
+            <div class="confirm btn">confirm</div>
+            <div class="delete btn">delete</div>
+
+        </div>
+    </div>
+
+
+</div>
+ 
+ 

@@ -1,0 +1,364 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% load static %}
+
+<style>
+    .coverPicture {
+
+        display: flex;
+
+    }
+
+    .uploadCont {
+
+        position: absolute;
+        right: 8%;
+        padding: 9px 0px;
+
+    }
+
+    .uploadCont i {
+        cursor: pointer;
+        background: gray;
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 26px;
+        color: white;
+
+    }
+
+    .coverPicture img {
+        height: 430px;
+        border-radius: 12px;
+        width: 80%;
+        margin: auto;
+        box-shadow: 2px 2px 5px grey;
+
+    }
+
+    .uploadCont input {
+
+        position: relative;
+        width: 53px;
+        right: 47px;
+        top: -5px;
+        opacity: -1;
+        border-radius: 31px;
+
+    }
+
+    .profile .profileinfo {
+        display: flex;
+        width: 78%;
+        justify-content: space-between;
+        margin: 10px auto;
+        border-bottom: 1px solid #bcbcbc;
+        height: 120px;
+
+    }
+
+
+    .profile .profileinfo .profilelogo {
+        width: 180px;
+        height: 180px;
+        position: relative;
+        bottom: 100px;
+
+        border: 6px solid #f2f2f2;
+        border-radius: 50%;
+
+    }
+
+    .profile .profileinfo .username {
+        font-size: 30px;
+    }
+
+    .nameTextCont {
+        display: flex;
+    }
+
+    .buttons {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+        height: 92px;
+        align-items: flex-end;
+    }
+
+    .buttons div {
+
+        margin: 0px 10px;
+    }
+
+    .profile .navProfile {
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+        height: fit-content;
+    }
+
+    .profile .navProfile div {
+
+        padding: 5px 10px;
+        margin: 3px;
+
+    }
+
+    .profile .navProfile div:hover {
+
+        background-color: rgb(235, 235, 235);
+        border-radius: 6px;
+        cursor: pointer;
+
+    }
+
+    .topofProfile {
+        background: white;
+        width: 99%;
+        margin: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    @media (max-width:1000px) {
+
+
+        .coverPicture img {
+            height: 400px;
+            width: 90%;
+            margin: auto;
+            box-shadow: 2px 2px 5px grey;
+
+        }
+
+        .profile .profileinfo .profilelogo {
+            width: 160px;
+            height: 160px;
+
+            bottom: 85px;
+
+        }
+
+        .profile .profileinfo .username {
+            font-size: 25px;
+        }
+
+
+
+    }
+
+
+    #profileNavcontent {
+
+        width: 70%;
+        margin: auto;
+    }
+
+
+    @media (max-width:870px) {
+        .profile .profileinfo {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: -85px;
+            z-index: 2;
+            width: 100%;
+            height: 300px;
+
+        }
+
+        .profile .profileinfo .profilelogo {
+            position: inherit;
+
+        }
+
+        .nameTextCont {
+            flex-direction: column;
+        }
+
+        .nameTextCont {
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    @media (max-width:600px) {
+        .profile .navProfile {
+
+            width: 100%;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .profile .navProfile div {
+
+            padding: 5px 5px;
+            margin: 3px;
+
+        }
+
+        #profileNavcontent {
+
+            width: 90%;
+        }
+
+
+
+    }
+
+    @media (max-width:450px) {
+        .profile .navProfile {
+
+            justify-content: space-between;
+            width: 100%;
+            font-size: 11px;
+        }
+
+        .profile .navProfile div {
+
+            padding: 5px 2px;
+            margin: 3px;
+
+        }
+
+        #profileNavcontent {
+
+            width: 95%; 
+        }
+
+
+    }
+</style>
+
+<div class="profile">
+
+
+    <div class="topofProfile">
+
+
+        <div class="coverPicture">
+            <img src="{% static 'coverPic.jpg' %} " alt="" id="setCoverPic">
+            <div class="uploadCont">
+                <i class="fa fa-camera" aria-hidden="true" title="upload Cover Picture"></i>
+                <input class="" id="uploadCoverImg" name="coverImg" type="file" title="upload Cover Picture">
+            </div>
+        </div>
+
+
+        <div class="profileinfo ">
+            <!-- <div class="uploadCont">
+            <i class="fa fa-camera" aria-hidden="true" title="upload Cover Picture"></i>
+            <input class="" id="uploadCoverImg" name="coverImg" type="file"title="upload Cover Picture" >
+        </div> -->
+            <div class="nameTextCont">
+                <img src="{%static 'facebook-logo.png' %}" alt="" class="profilelogo">
+                <div class="mx-4">
+
+                    <div class="username" style="text-transform: capitalize;"><strong>Nstudio Nstudio</strong></div>
+                    <div class="NoFriends" style="color: gray;"><strong>20 Friends</strong></div>
+                </div>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <div class="addstory btn btn-primary">Add to story</div>
+                <div class="editProfile btn btn-secondary">Edit profile</div>
+            </div>
+
+        </div>
+        <div class="navProfile ">
+            <div class="posts" style="border-bottom: 2px solid dodgerblue;">posts</div>
+            <div class="about">about</div>
+            <div class="friends">Friends</div>
+            <div class="photos">Photos</div>
+            <div class="video">Videos</div>
+            <div class="checkins">check-ins</div>
+        </div>
+    </div>
+
+    <div id="profileNavcontent">
+
+        {% include 'profilepage/posts.html' %}
+        {% include 'profilepage/photos.html' %}
+        {% include 'profilepage/videos.html' %}
+        {% include 'profilepage/checkins.html' %}
+        {% include 'profilepage/friends.html' with range="1 2 3 4 5 1 12 4 " %}
+        {% include 'profilepage/about.html' %}
+
+    </div>
+
+    <div class="fbcr fr" style="  overflow-y: hidden; scrollbar-width: none; ">
+
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script>
+
+
+
+        $('input[type="file"]').change(function (ev) {
+            var fileName = ev.target.files[0].name;
+            console.log(ev.target.id)
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // get loaded data and render thumbnail.
+                if (ev.target.id == "uploadCoverImg") {
+
+                    document.getElementById("setCoverPic").src = e.target.result;
+
+                }
+                // document.getElementById("setCoverPic").style.display = "inherit";
+
+            };
+
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+        // all click events of homepage handle herre 
+        document.addEventListener('click', (e) => {
+            // now here change the middle homepage links page [stories , rooms , reels] 
+            links = ['posts', 'friends', 'about', 'photos', 'video', 'checkins']
+            a = e.target.classList[0]
+
+            if (a == 'posts' || a == 'friends' || a == 'about' || a == 'photos' || a == 'video' || a == 'checkins') {
+                links.forEach((element) => {
+                    document.getElementsByClassName(element + "_cont")[0].style.display = "none"
+                    document.getElementsByClassName(element)[0].style.borderBottom = "none"
+                })
+                links.forEach((element) => {
+                    if (a == element) {
+                        document.getElementsByClassName(a + '_cont')[0].style.display = "flex"
+                        document.getElementsByClassName(a )[0].style.borderBottom = "2px solid dodgerblue"
+                        
+                    }
+                })
+
+            }
+
+
+        })
+
+
+    </script>
+
+    {% endblock content%}
